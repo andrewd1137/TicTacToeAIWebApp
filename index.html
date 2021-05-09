@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe AI Tournament</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <div class="row">
+
+        <div class="column">
+            <h1 class="websiteHeaders">Tic Tac Toe</h1>
+            <h2 id="vsLabel"></h2>
+            <table class="board">
+                <tr>
+                    <td>
+                        <div id="0" class="square left top"></div>
+                    </td>
+                    <td>
+                        <div id="1" class="square top v-middle"></div>
+                    </td>
+                    <td>
+                        <div id="2" class="square right top"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="3" class="square left h-middle"></div>
+                    </td>
+                    <td>
+                        <div id="4" class="square v-middle h-middle"></div>
+                    </td>
+                    <td>
+                        <div id="5" class="square right h-middle"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="6" class="square left bottom"></div>
+                    </td>
+                    <td>
+                        <div id="7" class="square bottom v-middle"></div>
+                    </td>
+                    <td>
+                        <div id="8" class="square right bottom"></div>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <div id="messageBox"></div>
+            <br>
+            <div class="controls">
+                <button class="button" onclick="resetTournament()">Reset Tournament</button>&nbsp;
+                <button id="gameButton" class="button" onclick="nextGame()">Start Tournament</button>&nbsp;
+            </div>
+        </div>
+
+
+        <div class="column">
+            <h1 class="websiteHeaders">Tic Tac Toe AI Tournament</h1>
+            <main id="tournament">
+                <ul class="round round-1">
+                    <li class="spacer">&nbsp;</li>
+
+                    <li id="Agent0" class="game game-top">Agent0<span id="span1"></span></li>
+                    <li class="game game-spacer">&nbsp;</li>
+                    <li id="Agent1" class="game game-bottom">Agent1 <span id="span2"></span></li>
+
+                    <li class="spacer">&nbsp;</li>
+
+                    <li id="Agent2" class="game game-top">Agent2<span id="span3"></span></li>
+                    <li class="game game-spacer">&nbsp;</li>
+                    <li id="Agent3" class="game game-bottom">Agent3<span id="span4"></span></li>
+
+                    <li class="spacer">&nbsp;</li>
+
+                    <li id="Agent4" class="game game-top">Agent4<span id="span5"></span></li>
+                    <li class="game game-spacer">&nbsp;</li>
+                    <li id="Agent5" class="game game-bottom">Agent5<span id="span6"></span></li>
+
+                    <li class="spacer">&nbsp;</li>
+
+                    <li id="Agent6" class="game game-top">Agent6<span id="span7"></span></li>
+                    <li class="game game-spacer">&nbsp;</li>
+                    <li id="Agent7" class="game game-bottom">Agent7<span id="span8"></span></li>
+
+                    <li class="spacer">&nbsp;</li>
+
+                    <li id="Agent8" class="game game-top">Agent8<span id="span9"></span></li>
+                    <li class="game game-spacer">&nbsp;</li>
+                    <li id="Agent9" class="game game-bottom">Agent9<span id="span10"></span></li>
+
+                    <li class="spacer">&nbsp;</li>
+
+                    <li id="Agent10" class="game game-top">Agent10<span id="span11"></span></li>
+                    <li class="game game-spacer">&nbsp;</li>
+                    <li id="Agent11" class="game game-bottom">Agent11<span id="span12"></span></li>
+
+                    <li class="spacer">&nbsp;</li>
+
+                    <li id="Agent12" class="game game-top">Agent12<span id="span13"></span></li>
+                    <li class="game game-spacer">&nbsp;</li>
+                    <li id="Agent13" class="game game-bottom">Agent13<span id="span14"></span></li>
+
+                    <li class="spacer">&nbsp;</li>
+
+                    <li id="Agent14" class="game game-top">Agent14<span id="span15"></span></li>
+                    <li class="game game-spacer">&nbsp;</li>
+                    <li id="Agent15" class="game game-bottom">Agent15<span id="span16"></span></li>
+
+                    <li class="spacer">&nbsp;</li>
+                </ul>
+                <ul class="round round-2">
+                    <li class="spacer">&nbsp;</li>
+
+                    <li id="winnerG1" class="game game-top"><span id="span17"></span></li>
+                    <li class="game game-spacer">&nbsp;</li>
+                    <li id="winnerG2" class="game game-bottom"><span id="span18"></span></li>
+
+                    <li class="spacer">&nbsp;</li>
+
+                    <li id="winnerG3" class="game game-top"><span id="span19"></span></li>
+                    <li class="game game-spacer">&nbsp;</li>
+                    <li id="winnerG4" class="game game-bottom"><span id="span20"></span></li>
+
+                    <li class="spacer">&nbsp;</li>
+
+                    <li id="winnerG5" class="game game-top"><span id="span21"></span></li>
+                    <li class="game game-spacer">&nbsp;</li>
+                    <li id="winnerG6" class="game game-bottom"><span id="span22"></span></li>
+
+                    <li class="spacer">&nbsp;</li>
+
+                    <li id="winnerG7" class="game game-top"><span id="span23"></span></li>
+                    <li class="game game-spacer">&nbsp;</li>
+                    <li id="winnerG8" class="game game-bottom player"><span id="span24"></span></li>
+
+                    <li class="spacer">&nbsp;</li>
+                </ul>
+                <ul class="round round-3">
+                    <li class="spacer">&nbsp;</li>
+
+                    <li id="winner2G1" class="game game-top"><span id="span25"></span></li>
+                    <li class="game game-spacer">&nbsp;</li>
+                    <li id="winner2G2" class="game game-bottom"><span id="span26"></span></li>
+
+                    <li class="spacer">&nbsp;</li>
+
+                    <li id="winner2G3" class="game game-top"><span id="span27"></span></li>
+                    <li class="game game-spacer">&nbsp;</li>
+                    <li id="winner2G4" class="game game-bottom"><span id="span28"></span></li>
+
+                    <li class="spacer">&nbsp;</li>
+                </ul>
+                <ul class="round round-4">
+                    <li class="spacer">&nbsp;</li>
+
+                    <li id="winner3G1" class="game game-top"><span id="span29"></span></li>
+                    <li class="game game-spacer">&nbsp;</li>
+                    <li id="winner3G2" class="game game-bottom"><span id="span30"></span></li>
+
+                    <li class="spacer">&nbsp;</li>
+                </ul>
+                <script src="main.js"></script>
+            </main>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

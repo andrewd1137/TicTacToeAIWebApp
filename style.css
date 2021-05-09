@@ -1,0 +1,144 @@
+/* generic styles for page */
+*{
+    background: darkgray;
+}
+
+.websiteHeaders{
+    text-align: center;
+}
+
+main{
+    display:flex;
+    flex-direction:row;
+}
+
+body{
+    font-family:sans-serif;
+    font-size:small;
+    padding:10px;
+    line-height:1.4em;
+}
+
+/* styles for the tic tac toe game */
+.controls {
+    text-align: center;
+}
+
+.square {
+    display: inline-block;
+    width: 10em;
+    height: 75px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    line-height: 75px;
+    color: black;
+}
+
+.left {
+    border-right: 1px solid black;
+}
+
+.right {
+    border-left: 7px solid black;
+}
+
+.top {
+    border-bottom: 1px solid black;
+}
+
+.bottom {
+    border-top: 7px solid black;
+}
+
+.v-middle {
+    border-right: 1px solid black;
+    border-left: 7px solid black;
+}
+
+.h-middle {
+    border-top: 7px solid black;
+    border-bottom: 1px solid black;
+}
+
+#messageBox {
+    text-align: center;
+}
+
+#vsLabel{
+    text-align: center;
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px gray;
+}
+
+.button:hover {
+    background-color: gray;
+    box-shadow: 0 5px black;
+}
+
+.button:active {
+    background-color: black;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+/* styles for the container that holds the game board and  tournament bracket */
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 33.33%;
+    padding: 5px;
+}
+
+/* styles for the tournament board */
+.round{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    width:200px;
+    list-style:none;
+    padding:0;
+}
+.round .spacer{ flex-grow:1; }
+.round .spacer:first-child,
+.round .spacer:last-child{ flex-grow:.5; }
+
+.round .game-spacer{
+    flex-grow:1;
+}
+
+li.game{
+    padding-left:20px;
+}
+
+li.game span{
+    float:right;
+    margin-right:5px;
+}
+
+li.game-top{ border-bottom:1px solid black; }
+
+li.game-spacer{
+    border-right:1px solid black;
+    min-height:40px;
+}
+
+li.game-bottom{
+    border-top:1px solid black;
+}
