@@ -232,96 +232,6 @@ let makeMoveAtFirstAvailableSquare = function()
     }
 }
 
-// minimax function for Agent 0
-miniMaxFunction = function ()
-{
-    let bestscore = -1000;
-    let bestMove = 0;
-
-    let possibleSquares = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-    let board = [];
-
-    for(let square=0; square<possibleSquares.length; square++)
-    {
-        square = document.getElementById( square );
-        if( squareIsOpen( square ))
-        {
-            board[square] = "O";
-            let score = miniMax(board, 0, false)
-            board[square] = ""
-            if(score > bestscore)
-            {
-                bestscore = score
-                bestMove = square
-            }
-        }
-    }
-    moveMade = bestMove
-}
-
-// minimax algorithm called by the minimax function
-let miniMax = function (board, depth, isMaximizing)
-{
-    if(checkBoardWIthSymbol(player1Symbol) === true)
-    {
-        return 10;
-    }
-    else if(checkBoardWIthSymbol(player2Symbol) === true)
-    {
-        return -10;
-    }
-    else if(checkForDraw())
-    {
-        return 0;
-    }
-
-    if(isMaximizing)
-    {
-        let bestscore = -1000;
-
-        let possibleSquares = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-        let board = [];
-
-        for(let square=0; square<possibleSquares.length; square++)
-        {
-            square = document.getElementById( square );
-            if( squareIsOpen( square ))
-            {
-                board[square] = "O";
-                let score = miniMax(board, 0, false)
-                board[square] = ""
-                if(score > bestscore)
-                {
-                    bestscore = score
-                }
-            }
-        }
-        return bestscore
-    }
-    else
-    {
-        let bestscore = 1000;
-
-        let possibleSquares = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-        let board = [];
-
-        for(let square=0; square<possibleSquares.length; square++)
-        {
-            square = document.getElementById( square );
-            if( squareIsOpen( square ))
-            {
-                board[square] = "X";
-                let score = miniMax(board, depth + 1, true)
-                board[square] = ""
-                if(score > bestscore)
-                {
-                    bestscore = score
-                }
-            }
-        }
-    }
-
-}
 
 let checkBoardWIthSymbol = function (symbolForMinimax)
 {
@@ -374,7 +284,7 @@ let makeProbabilityMove = function()
 {
     if (Math.random()*100 <= AgentProbability)
     {
-        miniMaxFunction();
+        bestMoveFunction();
     }
     else
     {
@@ -626,13 +536,3 @@ let updatePlayerBracket = function () {
         alert("Winner is: " + winner);
     }
 }
-
-/*
-this is for a human player that I am not using as apart of this current program.
-taken from an old tutorial i found online when first learning HTML CSS JS.
-
-for (let i = 0; i < squares.length; i++)
-{
-    squares[i].addEventListener('click', chooseSquare, false);
-}
- */
