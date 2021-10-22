@@ -10,12 +10,7 @@ The next game button/tiebreaker game/start tournament button (all the same butto
 My Code:
 The TicTacToe Game code is recycled from an old project I worked on a year or two ago following a tutorial on how to make a HTML CSS JS webiste for a two player tictactoe game. I removed the code that belonged to the human players and added some code for varius AI's to work. The HTML and CSS was mostly recycled from that two player tutorial, just some buttons and labels changed. Also, the bracket was from the help of "codepen" (see references at end of read me for link to codepen site) on how to make an HTML and CSS bracket. I used the code I needed to for the bracket styling for there and updated the elements for the agents as needed in javascript on lines 495-EOF.
 
-
-
-My minimax function and important parts of the code can be found on lines 221-483. These include the players functions as well as the algorithms  for the agent types. 
-
 Other parts of the bracket updates code I made include lines 495-EOF which cuts losers, updates the html bracket, and varius other things for the visuals to work.
-
 
 References:
 Bracket HTML CSS source: https://blog.codepen.io/2018/02/16/need-make-tournament-bracket/
